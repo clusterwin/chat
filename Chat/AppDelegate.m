@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[Parse setApplicationId:@"DXsvTSLgsKT03gSSqy6V5KbLwVpgfEjmEsKzzQUP"
 				  clientKey:@"BXAzmCJhMtIVWhLVEiKIMzPCA5XI0Nt9NwvAOPVd"];
-	
+	self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+	self.window.backgroundColor = [UIColor whiteColor];
+	[self.window makeKeyAndVisible];
 	// Override point for customization after application launch.
 	return YES;
 }
